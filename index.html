@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JARVIS QUANTUM - HD CORE V5</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --quantum-cyan: #22d3ee;
+        --deep-space: #010409;
+        --slate-900: #0f172a;
+        --glow: 0 0 20px rgba(34, 211, 238, 0.3);
+      }
+      body {
+        margin: 0;
+        background-color: var(--deep-space);
+        color: #f8fafc;
+        font-family: 'Inter', sans-serif;
+        overflow: hidden;
+      }
+      .font-orbitron { font-family: 'Orbitron', sans-serif; }
+      .font-mono { font-family: 'Share Tech Mono', monospace; }
+      
+      .bg-quantum-grid {
+        background-image: radial-gradient(circle at 1px 1px, rgba(34, 211, 238, 0.05) 1px, transparent 0);
+        background-size: 30px 30px;
+        mask-image: linear-gradient(to bottom, black, transparent);
+      }
+
+      .glass-v5 {
+        background: rgba(15, 23, 42, 0.4);
+        backdrop-filter: blur(24px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+      }
+
+      .text-quantum {
+        text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+      }
+
+      .hd-edge {
+        border: 1px solid rgba(34, 211, 238, 0.15);
+        box-shadow: inset 0 0 20px rgba(34, 211, 238, 0.05);
+      }
+
+      .vignette-quantum {
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.7) 100%);
+        pointer-events: none;
+        z-index: 5;
+      }
+
+      /* Ultra-smooth scanline */
+      .scanline-hd {
+        width: 100%;
+        height: 1px;
+        background: rgba(34, 211, 238, 0.1);
+        position: absolute;
+        top: 0;
+        animation: scanline-hd-move 10s linear infinite;
+        z-index: 100;
+        pointer-events: none;
+      }
+
+      @keyframes scanline-hd-move {
+        from { transform: translateY(-100vh); }
+        to { transform: translateY(100vh); }
+      }
+
+      ::-webkit-scrollbar { width: 5px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: rgba(34, 211, 238, 0.2); border-radius: 10px; }
+      ::-webkit-scrollbar-thumb:hover { background: rgba(34, 211, 238, 0.4); }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.474.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+</head>
+  <body class="selection:bg-cyan-900 selection:text-white">
+    <div class="vignette-quantum"></div>
+    <div class="scanline-hd"></div>
+    <div id="root"></div>
+  </body>
+</html>
